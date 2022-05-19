@@ -24,7 +24,8 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatInputModule } from "@angular/material/input";
-import { LivroDeleteComponent } from './components/views/livro-delete/livro-delete.component';
+import { LivroDeleteComponent } from './components/views/livro/livro-delete/livro-delete.component';
+import { LivroUpdateComponent } from './components/views/livro/livro-update/livro-update.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { LivroDeleteComponent } from './components/views/livro-delete/livro-dele
     LivroCreateComponent,
     LivroReadComponent,
     LivroDeleteComponent,
+    LivroUpdateComponent,
   ],
   imports: [
     BrowserModule,

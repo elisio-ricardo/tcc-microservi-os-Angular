@@ -15,6 +15,11 @@ export class LivroService {
     //tem que por para poder fazer as requisiçoes http
   }
 
+  findById(id: String): Observable<Livro> {
+    const url = `${this.baseUrl}/livros/${id}`;
+    return this.http.get<Livro>(url);
+  }
+
   findAll(): Observable<Livro[]> {
     const url = `${this.baseUrl}/livros`;
     return this.http.get<Livro[]>(url);
@@ -23,6 +28,16 @@ export class LivroService {
   create(livro: Livro): Observable<Livro> {
     const url = `${this.baseUrl}/livros`;
     return this.http.post<Livro>(url, livro);
+  }
+
+  update(livro: Livro): Observable<Livro> {
+    const url = `${this.baseUrl}/livros/${livro.id}`;
+    return this.http.put<Livro>(url, livro);
+  }
+
+  delete(id: String): Observable<void> {
+    const url = `${this.baseUrl}/livros/${id}`;
+    return this.http.delete<void>(url);
   }
 
   mensagem(str: String): void {
